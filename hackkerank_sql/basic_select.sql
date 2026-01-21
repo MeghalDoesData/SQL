@@ -1,1 +1,58 @@
+--Revising the Select Query I
+/* Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA. */
+
+SELECT * 
+from city
+where countrycode = 'USA' 
+and population > 100000
+
+--Revising the Select Query II
+-- Query the NAME field for all American cities in the CITY table with populations larger than 120000. The CountryCode for America is USA.
+
+select name 
+from city
+where population > 120000
+and countrycode = 'USA'
+
+--Query all columns (attributes) for every row in the CITY table.
+SELECT * from city
+
+--Query all columns for a city in CITY with the ID 1661.
+select * 
+from city
+where id = 1661
+
+--Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN.
+select * 
+from city
+where countrycode = 'JPN'
+
+--Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+SELECT name 
+from city
+where countrycode = 'JPN'
+
+--Weather Observation Station 1
+--Query a list of CITY and STATE from the STATION table.
+
+select city,state
+from station
+
+--Weather Observation Station 3
+--Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer.
+
+select distinct city
+from station
+where id%2 = 0
+
+--Weather Observation Station 4
+--Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
+
+select count(city) - count(distinct city) as diff
+from station
+
+--Weather Observation Station 5
+--Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name).
+--If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+
 
